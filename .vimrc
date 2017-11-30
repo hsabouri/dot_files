@@ -8,6 +8,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'rust-lang/rust.vim'
 
 syntax on
 set ruler
@@ -43,4 +44,4 @@ command Qa qa
 execute pathogen#infect()
 filetype plugin indent on
 
-let @c = '0i//x€kbjjxxi/€kr€kbwi| Ako€kb//  |€kbo--------------------------------------------------------------------------------oyyjp'
+let @c = '0i//xâ‚¬kbjjxxi/â‚¬krâ‚¬kbwi| Akoâ‚¬kb//  |â‚¬kbo--------------------------------------------------------------------------------oyyjp'
