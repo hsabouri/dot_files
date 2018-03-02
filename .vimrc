@@ -22,8 +22,7 @@ nnoremap <Tab> <c-W>w
 nnoremap <S-Tab> <c-W>W
 imap jj <ESC>
 imap cosnt const
-map <C-j> <C-x>
-map <C-k> <C-a>
+
 map <C-j> <C-e>
 map <C-k> <C-y>
 map <C-h> <C-u>
