@@ -24,6 +24,10 @@ imap jj <ESC>
 imap cosnt const
 map <C-j> <C-x>
 map <C-k> <C-a>
+map <C-j> <C-e>
+map <C-k> <C-y>
+map <C-h> <C-u>
+map <C-l> <C-d>
 map <left> <Nop>
 map <right> <Nop>
 map <up> <Nop>
