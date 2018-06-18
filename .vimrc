@@ -5,15 +5,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+
 Plugin 'vim-syntastic/syntastic'
 Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'rust-lang/rust.vim'
 Plugin 'isRuslan/vim-es6'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
-Plugin 'aklt/plantuml-syntax'
-Plugin 'scrooloose/vim-slumlord'
+Plugin 'rust-lang/rust.vim'
 
 let mapleader = ","
 
@@ -21,11 +20,13 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_cpp_check_header = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_cpp_check_header=1
+let g:syntastic_loc_list_height=2
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_enable_signs=1
+let g:syntastic_rust_checkers = ['cargo']
 
 syntax on
 set ruler
@@ -46,6 +47,8 @@ map <down> <Nop>
 
 nnoremap <silent> <Leader>= :exe "vertical resize " . (winwidth(0) + 10)<CR>
 nnoremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) - 10)<CR>
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) + 5)<CR>
+nnoremap <silent> <Leader>_ :exe "resize " . (winheight(0) - 5)<CR>
 
 "Deactivates expandtab for makefiles
 autocmd FileType make setlocal noexpandtab
@@ -56,6 +59,8 @@ augroup project
 	autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
 augroup END
 
+autocmd BufRead,BufNewFile *.lalrpop set filetype=rust
+
 command WQ wq
 command Wq wq
 command W w
@@ -65,7 +70,7 @@ command Wa wa
 command QA qa
 command Qa qa
 
-execute pathogen#infect()
+call vundle#end()
 filetype plugin indent on
 
 set exrc
